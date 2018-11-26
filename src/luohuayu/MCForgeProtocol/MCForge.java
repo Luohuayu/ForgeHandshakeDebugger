@@ -56,11 +56,14 @@ public class MCForge {
             this.handshake.handle(packet);
             break;
         case "REGISTER":
-            Utils.log("REGISTER(S->C):" + new String(packet.getData()));
+            Utils.log("REGISTER(S->C): " + new String(packet.getData()));
             this.session.send(new ClientPluginMessagePacket("REGISTER", packet.getData()));
             break;
         case "MC|Brand":
             this.session.send(new ClientPluginMessagePacket("MC|Brand", "fml,forge".getBytes()));
+            break;
+        default:
+            Utils.log("CustomPayload<" + packet.getChannel() + "> (S->C): " + new String(packet.getData()));
             break;
         }
     }
