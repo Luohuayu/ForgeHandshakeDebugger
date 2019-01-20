@@ -1,6 +1,7 @@
 package luohuayu.ForgeHandshakeDebugger;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.spacehq.mc.protocol.MinecraftProtocol;
 import org.spacehq.mc.protocol.data.game.entity.metadata.ItemStack;
@@ -19,7 +20,7 @@ import org.spacehq.packetlib.tcp.TcpSessionFactory;
 import luohuayu.MCForgeProtocol.MCForge;
 
 public class BotClient {
-    public HashMap<String, String> modList = new HashMap<String, String>();
+    public Map<String, String> modList = new HashMap<String, String>();
     public Client client;
 
     public void connect(String ip, int port, String username) {

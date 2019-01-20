@@ -2,6 +2,7 @@ package luohuayu.MCForgeProtocol;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.spacehq.mc.protocol.packet.ingame.client.ClientPluginMessagePacket;
 import org.spacehq.mc.protocol.packet.ingame.server.ServerPluginMessagePacket;
@@ -18,10 +19,10 @@ import luohuayu.ForgeHandshakeDebugger.Utils;
 public class MCForge {
     private MCForgeHandShake handshake;
 
-    public HashMap<String, String> modList;
+    public Map<String, String> modList;
     public Session session;
 
-    public MCForge(Session session, HashMap<String, String> modList) {
+    public MCForge(Session session, Map<String, String> modList) {
         this.modList = modList;
         this.session = session;
         this.handshake = new MCForgeHandShake(this);
